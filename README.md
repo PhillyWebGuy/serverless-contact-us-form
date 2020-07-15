@@ -5,9 +5,9 @@ Quickly deploy an endpoint to handle your `contact us` form on your static websi
 You can get your reCAPTCHA secret here:  https://www.google.com/recaptcha/admin#list
 
 ## Package and Deploy
-```aws cloudformation package --template-file stack.yml --output-template-file stack-output.yml --s3-bucket serverless-contact-us-form```
+```aws cloudformation package --template-file stack.yml --output-template-file stack-output.yml --s3-bucket my-s3-bucket-name```
 
-```aws cloudformation deploy --template-file stack-output.yml --stack-name contact-us --capabilities CAPABILITY_IAM  --parameter-overrides "Subject=Contact Us" "ReCaptchaSecret=???" "ToEmailAddress=???"```
+```aws cloudformation deploy --template-file stack-output.yml --stack-name my-stack-name --parameter-overrides ToEmailAddress=my@email-address.com ReCaptchaSecret=long-string-captcha-secret Subject=SITE_CONTACT_US --capabilities CAPABILITY_IAM```
 
 
 ## What AWS resources does this template use?
